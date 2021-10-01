@@ -1,3 +1,4 @@
 {
-    "build": { "dockerfile": "Dockerfile" }
+    // docker-composeのほうが良さそう？
+    // "build": { "dockerfile": "Dockerfile" }
 }
