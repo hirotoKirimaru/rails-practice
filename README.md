@@ -18,3 +18,15 @@
         - https://git.heroku.com/mysterious-lowlands-42932.git
     - page
         - https://mysterious-lowlands-42932.herokuapp.com/
+
+# herokuへのデプロイができない
+https://railstutorial.jp/chapters/beginning?version=5.1#cha-beginning
+
+```bash
+# branchはmainなので.not master.
+git push heroku main
+
+# デフォルトバンドル？
+heroku buildpacks:set heroku/ruby
+
+```
