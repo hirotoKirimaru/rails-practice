@@ -10,3 +10,11 @@
     - https://docs.docker.com/samples/rails/
 - Railsチュートリアル
     - https://railstutorial.jp/chapters/beginning?version=5.1
+
+
+
+- heroku
+    - git
+        - https://git.heroku.com/mysterious-lowlands-42932.git
+    - page
+        - https://mysterious-lowlands-42932.herokuapp.com/
