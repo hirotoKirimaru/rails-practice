@@ -2,6 +2,11 @@
 
 
 
+```bash
+# テストの監視
+bundle exec guard
+```
+
 # 環境構築
 
 - Qiita
