@@ -1,6 +1,7 @@
-class User
+class User < ApplicationRecord
     attr_accessor :name, :email
-  
+    validates :name, presence: true
+
     def initialize(attributes = {})
       @name  = attributes[:name]
       @email = attributes[:email]
