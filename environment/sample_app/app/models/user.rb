@@ -18,5 +18,5 @@ class User < ApplicationRecord
     def formatted_email
       "#{@name} <#{@email}>"
     end
-    has_secure_password
+    # has_secure_password
   end
