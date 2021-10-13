@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    # before_save { email.downcase! }
+    # before_save { self.email = email.downcase }
     attr_accessor :name, :email
     validates :name, presence: true, length: { maximum: 50 }
 
@@ -16,4 +18,5 @@ class User < ApplicationRecord
     def formatted_email
       "#{@name} <#{@email}>"
     end
+    has_secure_password
   end
