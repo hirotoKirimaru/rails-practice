@@ -1,5 +1,8 @@
 class FizzBuzz
     def execute
+      (1..100).each {
+        |n| p convert(n) 
+      }
     end
 
     def convert(value)

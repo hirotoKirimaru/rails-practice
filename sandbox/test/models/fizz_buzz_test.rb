@@ -5,6 +5,10 @@ class FizzBuzzTest < ActiveSupport::TestCase
     @fizz_buzz = FizzBuzz.new
   end
 
+  test "execute" do
+    @fizz_buzz.execute
+  end
+
   test "1 to 1" do
     assert_equal("1", @fizz_buzz.convert(1))
   end 
