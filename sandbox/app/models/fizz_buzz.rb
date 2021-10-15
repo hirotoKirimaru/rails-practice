@@ -3,6 +3,6 @@ class FizzBuzz
     end
 
     def convert(value)
-      return "1"
+      return value.to_s
     end
 end
