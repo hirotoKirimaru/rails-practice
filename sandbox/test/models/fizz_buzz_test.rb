@@ -6,7 +6,19 @@ class FizzBuzzTest < ActiveSupport::TestCase
   end
 
   test "execute" do
+    # GIVEN
+    # 標準出力の差し替え
+    # $stdout = StringIO.new
+    
+    # WHEN
     @fizz_buzz.execute
+    # output = $stdout.string
+
+    # THEN
+    # assert_equal(output, "1")
+
+    # TEAR DOWN
+    $stdout = STDOUT
   end
 
   test "1 to 1" do
