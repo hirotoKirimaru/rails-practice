@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
       log_in user
+      remember user
       redirect_to user
     else
       # エラーメッセージを作成する
@@ -16,5 +17,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out if logged_in?
   end
 end
