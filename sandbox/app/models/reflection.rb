@@ -1,13 +1,13 @@
 class Reflection
-    def house
-        "house"
+    def house(name: "")
+        name == "" ? "house" : format("%s house", name)
     end
 
-    def mouse
-        "mouse"
+    def mouse(sum: 0)
+        sum == 0 ? "mouse" : format("%s mouse", sum)
     end
 
-    def nose
-        "nose"
+    def nose(name: "")
+        name == "" ? "nose" : format("%s nose", name)
     end
 end
