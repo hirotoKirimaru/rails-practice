@@ -23,7 +23,7 @@ RSpec.describe 'FizzBuzzクラスの確認', type: :model do
     end
 
     parameterized do
-      where(:param, :answer, size: 8) do
+      where(:param, :expected, size: 8) do
         [
           [1 , "1"],
           [2 , "2"],
@@ -42,7 +42,7 @@ RSpec.describe 'FizzBuzzクラスの確認', type: :model do
   
       with_them do
         it do
-          is_expected.to eq answer
+          is_expected.to eq expected
         end
       end
     end
