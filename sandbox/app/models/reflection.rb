@@ -7,7 +7,7 @@ class Reflection
         sum == 0 ? "mouse" : format("%s mouse", sum)
     end
 
-    def nose(name: "")
-        name == "" ? "nose" : format("%s nose", name)
+    def nose()
+        "nose" 
     end
 end

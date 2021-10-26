@@ -40,7 +40,9 @@ RSpec.describe 'リフレクションクラスの確認', type: :model do
         end 
 
         it "noseを呼び出す" do
-            expect(reflection.public_send("nose", name: "baki")).to eq "baki nose"
+            expect do
+                reflection.public_send("nose", name: "aaa")
+            end.to raise_error(ArgumentError)
         end 
 
         it "gorillaを呼び出す" do
