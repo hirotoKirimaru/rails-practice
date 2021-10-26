@@ -22,7 +22,24 @@ RSpec.describe 'FizzBuzzクラスの確認', type: :model do
         end
     end
 
+    parameterized do
+      where(:param, :answer, size: 3) do
+        [
+          [1 , "1"],
+          [2 , "2"],
+          [3 , "Fizz"]
+        ]
+      end
+
+      subject{ 
+        target.convert(param) 
+      }
+  
+      with_them do
+        it do
+          is_expected.to eq answer
+        end
+      end
+    end
   end
-
-
 end
