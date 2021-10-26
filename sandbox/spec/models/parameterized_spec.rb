@@ -12,9 +12,11 @@ RSpec.describe 'Addition', type: :model do
       ]
     end
 
+    subject{ a+b }
+
     with_them do
       it do
-        expect(a + b).to eq answer
+        is_expected.to eq answer
       end
     end
   end
