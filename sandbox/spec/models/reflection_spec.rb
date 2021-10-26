@@ -32,7 +32,7 @@ RSpec.describe 'リフレクションクラスの確認', type: :model do
 
     context 'パラメータあり' do
         it "houseを呼び出す" do
-            expect(reflection.public_send("house", name: "baki")).to eq "baki house"
+            expect(reflection.public_send(:house, name: "baki")).to eq "baki house"
         end 
 
         it "mouseを呼び出す" do
