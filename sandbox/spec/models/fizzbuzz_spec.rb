@@ -23,11 +23,16 @@ RSpec.describe 'FizzBuzzクラスの確認', type: :model do
     end
 
     parameterized do
-      where(:param, :answer, size: 3) do
+      where(:param, :answer, size: 8) do
         [
           [1 , "1"],
           [2 , "2"],
-          [3 , "Fizz"]
+          [3 , "Fizz"],
+          [5 , "Buzz"],
+          [6 , "Fizz"],
+          [10 , "Buzz"],
+          [15 , "FizzBuzz"],
+          [30 , "FizzBuzz"],
         ]
       end
 
