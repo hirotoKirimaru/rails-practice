@@ -14,3 +14,11 @@ RUN bundle install --jobs=4 \
   && mkdir -p /rails/tmp/sockets
 
 COPY . /rails/
+
+COPY docker/script/entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
