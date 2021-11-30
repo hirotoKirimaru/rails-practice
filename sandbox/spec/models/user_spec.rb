@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before do
+  before {
     freeze_time
-  end
+  }
 
   context 'ユーザクラスの作成' do
     it "同一作成時間になること" do
-        # freeze_time
-
         old_user = User.new(id: 1, name: 'name', email: 'test@example.com', created_at: Time.now, updated_at: Time.now)
         new_user = User.new(id: 1, name: 'name', email: 'test@example.com', created_at: Time.now, updated_at: Time.now)
 
