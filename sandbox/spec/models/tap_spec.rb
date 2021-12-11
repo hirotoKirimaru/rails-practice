@@ -11,10 +11,17 @@ RSpec.describe 'Tapの確認', type: :model do
 
 
     it '適当なtrue' do
-      # target = Term.new()
-# 
-      # expect(target.is_not_daily_rate_term?).to eq true    
+      p target
+
+      target.tap do |t|
+        t.start_date = Time.new(2008, 6, 21, 0, 0 , 0, "+09:00")
+        t.end_date =   Time.new(2008, 7, 20, 0, 0 , 0, "+09:00")
+      end
+
+
       is_expected.to eq true
+
+      p target
       subject
     end
 
