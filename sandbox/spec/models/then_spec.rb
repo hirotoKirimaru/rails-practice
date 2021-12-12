@@ -9,6 +9,11 @@ RSpec.describe 'Tap・Thenの確認', type: :model do
         actual = target.then(&:upcase).then(&:reverse)
         expect(actual).to eq "!DLROW ,OLLEH"
       end
+
+      it 'HelloWorldを大文字にして、反転させる(thenなし)' do
+        actual = target.upcase.reverse
+        expect(actual).to eq "!DLROW ,OLLEH"
+      end
     end
 
     describe 'Yield_selfの確認' do
