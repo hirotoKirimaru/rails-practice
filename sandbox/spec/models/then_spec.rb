@@ -52,7 +52,7 @@ RSpec.describe 'Tap・Thenの確認', type: :model do
     # before { skip }
 
     describe 'Tapの確認' do
-      it 'selfに値をセットしていないので1yearsされていない' do
+      it 'selfに値をセットしているので1yearsされている' do
         term = Term.new
         time = Time.now
 
