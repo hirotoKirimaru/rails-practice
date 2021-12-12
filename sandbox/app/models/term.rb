@@ -17,4 +17,8 @@ class Term
   def is_not_daily_rate_term?
     true
   end
+
+  def start_date_update!
+    @start_date += 1.years
+  end
 end

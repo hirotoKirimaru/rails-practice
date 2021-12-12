@@ -56,9 +56,11 @@ RSpec.describe 'Tap・Thenの確認', type: :model do
         term = Term.new
         time = Time.now
 
-        actual = term.tap do |t|
-          t.start_date = t.start_date + 1.years
-        end
+        # actual = term.tap do |t|
+        #   t.start_date = t.start_date + 1.years
+        # end
+        actual = term.tap(&:start_date_update!)
+
         # 副作用も起こす
         expect(term.start_date.year).to eq time.year + 1
         expect(term.end_date.year).to eq time.year
