@@ -18,7 +18,7 @@ class Term
     true
   end
 
-  def start_date_update!
-    @start_date += 1.years
+  def start_date_update!(add_year: 1.years)
+    @start_date += add_year
   end
 end
