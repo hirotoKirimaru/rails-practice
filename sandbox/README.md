@@ -11,3 +11,8 @@ docker-compose run web bundle exec rspec
 ```bash
 docker-compose exec web bash
 ```
+# こっち？
+```
+docker-compose run web bash
+
+```
