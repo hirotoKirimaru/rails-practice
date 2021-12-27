@@ -36,6 +36,12 @@ RSpec.describe 'Timeクラスの動作確認', type: :model do
     end
   end
 
+  context 'なにもしない' do
+    it "同一作成時間にならないこと" do
+      expect(Time.now).not_to eq(Time.now)
+    end
+  end
+  
   context 'freeze_time' do
     before { freeze_time }
     it "同一作成時間になること" do
