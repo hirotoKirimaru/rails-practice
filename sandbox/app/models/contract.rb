@@ -13,49 +13,41 @@ class Contract
 
   ##
   # 解約可能か
-  # 日割ではない
+  # 日割とはならない契約日と解約日の関係であること
   #
   # @see https://nainaistar.hatenablog.com/entry/2021/05/02/120000
   def canExpire?
-    canExpireStartOfMonth?
-    canExpireMiddleOfMonth?
-    canExpireEndOfMonth?
+    return true if canExpireByStartOfMonth?
+    return true if canExpireByHasEndOfMonth?
+    canExpireByHasNotEndOfMonth?
   end
 
   private
 
-  def canExpireStartOfMonth?
-    true
+  ##
+  # 月の初日から起算する場合は、最終月の末日
+  #
+  def canExpireByStartOfMonth?
+    return expireDate.next_day(1).day == 1 if contractDate.day == 1
+
+    false
   end
 
-  def canExpireMiddleOfMonth?
-    true
+  ##
+  # 月の途中から起算し，最終月に応当日のある場合は、最終月の応当日の前日
+  # -1日すると、月を跨ぐ可能性があるのでNG
+  #
+  def canExpireByHasEndOfMonth?
+    contractDate.day == expireDate.next_day(1).day
   end
 
-  def canExpireEndOfMonth?
-    true
+  ##
+  # 月の途中から起算し，最終月に応当日のない場合は、最終月の末日
+  #
+  def canExpireByHasNotEndOfMonth?
+    return expireDate.next_day(1).day == 1 if contractDate.day > expireDate.day
+
+    false
   end
-  
+
 end
-
-# #  月の初日から起算する場合は、最終月の末日
-# if (contractDate.getDayOfMonth() == 1) {
-#   if (expireDate.plusDays(1).getDayOfMonth() == 1) {
-#     return true;
-#   }
-#   }
-#   // 月の途中から起算し，最終月に応当日のある場合は、最終月の応当日の前日
-#   // -1日すると、月を跨ぐ可能性があるのでNG
-#   if (contractDate.getDayOfMonth() == expireDate.plusDays(1).getDayOfMonth()) {
-#     return true;
-#   }
-#
-#   // 月の途中から起算し，最終月に応当日のない場合は、最終月の末日
-#   if (contractDate.getDayOfMonth() > expireDate.getDayOfMonth()) {
-#     if (expireDate.plusDays(1).getDayOfMonth() == 1) {
-#       return true;
-#     }
-#     }
-#
-#     return false;
-#     }
