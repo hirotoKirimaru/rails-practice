@@ -52,10 +52,14 @@ RSpec.describe 'Timeクラスの動作確認', type: :model do
   context 'travelとtravel_to' do
     before { travel_to(_20200101)}
     it "同一作成時間になること" do
+      expect(Time.now).to eq(Time.now)
+    end
+
+    it "travelして時間をずらすこと" do
       now = Time.now
       travel 1.years
       now2 = Time.now
-      
+
       expect(now).not_to eq(now2)
       expect(now).to eq(_20200101)
       expect(now2).to eq(_20210101)
