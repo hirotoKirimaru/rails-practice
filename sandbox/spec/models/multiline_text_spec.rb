@@ -5,12 +5,12 @@ RSpec.describe '複数行文字列の動作確認', type: :model do
   it '%|と<<~EOSの挙動確認' do
     actual =
       %|aiueo xyz
-12345
+12345 EOS
 |
 
     expected = <<~EOS
       aiueo xyz
-      12345
+      12345 EOS
     EOS
     
     p actual
@@ -22,12 +22,12 @@ RSpec.describe '複数行文字列の動作確認', type: :model do
   it '%|と<<~EOSの挙動確認(not)' do
     actual = %|
       aiueo xyz
-      12345
+      12345 EOS
     |
 
     expected = <<~EOS
       aiueo xyz
-      12345
+      12345 EOS
     EOS
 
     p actual
